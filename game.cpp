@@ -44,6 +44,7 @@ void Game::handleEvents() {
         } else if (event.type == SDL_KEYDOWN) {
             if (mo) {
                 mo = false;
+                Mix_PlayMusic(backgroundMusic, -1);
                 return;
             }
             if (event.key.keysym.sym == SDLK_SPACE && gameover==true) {
@@ -57,7 +58,7 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-    if (gameover) return;
+    if (gameover==true||mo==true) return;
     snake.update();
     if (snake.checkCollision()) {
         gameover = true;
@@ -76,23 +77,19 @@ void Game::update() {
 }
 
 void Game::render() {
-    if(mo==true){
-        SDL_RenderClear(renderer);
-        SDL_RenderCopy(renderer, newTexture, NULL, NULL);
-        SDL_RenderPresent(renderer);
-        return;
-    }
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
-    snake.render(renderer);
-    food.render(renderer);
-    SDL_RenderPresent(renderer);
-    if(gameover==true){
-        SDL_RenderClear(renderer);
-        SDL_RenderCopy(renderer, overTexture, NULL, NULL);
-        SDL_RenderPresent(renderer);
-        return;
+    if(mo==true){
+        SDL_RenderCopy(renderer, newTexture, NULL, NULL);
     }
+    else if(gameover==true){
+        SDL_RenderCopy(renderer, overTexture, NULL, NULL);
+    }
+    else{
+        SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
+        snake.render(renderer);
+        food.render(renderer);
+    }
+    SDL_RenderPresent(renderer);
 }
 
 
@@ -112,5 +109,4 @@ void Game::loadSounds() {
     Mix_VolumeChunk(eatSound, MIX_MAX_VOLUME);
     gameOverMusic = Mix_LoadMUS("mixer/gameover.mp3");
     backgroundMusic = Mix_LoadMUS("mixer/nhacnen.mp3");
-    Mix_PlayMusic(backgroundMusic, -1);
 }
