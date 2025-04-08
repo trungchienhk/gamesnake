@@ -8,13 +8,13 @@ Game::Game() {
     IMG_Init(IMG_INIT_JPG);
     window = SDL_CreateWindow("Snake Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    SDL_Surface* bgSurface = IMG_Load("background.jpg");
+    SDL_Surface* bgSurface = IMG_Load("image/background.jpg");
     backgroundTexture = SDL_CreateTextureFromSurface(renderer, bgSurface);
     SDL_FreeSurface(bgSurface);
-    SDL_Surface* overSurface = IMG_Load("gameover.jpg");
+    SDL_Surface* overSurface = IMG_Load("image/gameover.jpg");
     overTexture = SDL_CreateTextureFromSurface(renderer, overSurface);
     SDL_FreeSurface(overSurface);
-    SDL_Surface* newSurface = IMG_Load("moman.jpg");
+    SDL_Surface* newSurface = IMG_Load("image/moman.jpg");
     newTexture = SDL_CreateTextureFromSurface(renderer, newSurface);
     SDL_FreeSurface(newSurface);
     Mix_Init(MIX_INIT_MP3 | MIX_INIT_OGG);
@@ -108,9 +108,9 @@ void Game::reset() {
 void Game::loadSounds() {
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
     Mix_Init(MIX_INIT_MP3);
-    eatSound = Mix_LoadWAV("grow.wav");
+    eatSound = Mix_LoadWAV("mixer/grow.wav");
     Mix_VolumeChunk(eatSound, MIX_MAX_VOLUME);
-    gameOverMusic = Mix_LoadMUS("gameover.mp3");
-    backgroundMusic = Mix_LoadMUS("nhacnen.mp3");
+    gameOverMusic = Mix_LoadMUS("mixer/gameover.mp3");
+    backgroundMusic = Mix_LoadMUS("mixer/nhacnen.mp3");
     Mix_PlayMusic(backgroundMusic, -1);
 }
