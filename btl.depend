@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1744096877 source:d:\btl\food.cpp
+	"food.h"
+	<cstdlib>
+	"const.h"
+	<SDL.h>
+	<SDL_image.h>
+
+1744098077 d:\btl\food.h
+	<SDL.h>
+	"const.h"
+
+1744045130 d:\btl\const.h
+
+1744097007 source:d:\btl\game.cpp
+	<iostream>
+	"game.h"
+	"const.h"
+	<SDL_image.h>
+	<SDL_mixer.h>
+
+1744094809 d:\btl\game.h
+	"snake.h"
+	"food.h"
+	<SDL_mixer.h>
+
+1744041967 d:\btl\snake.h
+	<vector>
+	<SDL.h>
+	"const.h"
+
+1743777274 source:d:\btl\main.cpp
+	"game.h"
+	<iostream>
+
+1744041967 source:d:\btl\snake.cpp
+	"snake.h"
+	<SDL.h>
+
+1744093724 source:d:\btl\mixer.cpp
+	"mixer.h"
+	<SDL_log.h>
+
+1744093643 d:\btl\mixer.h
+	<SDL_mixer.h>
+
