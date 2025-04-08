@@ -11,6 +11,12 @@ Game::Game() {
     SDL_Surface* bgSurface = IMG_Load("background.jpg");
     backgroundTexture = SDL_CreateTextureFromSurface(renderer, bgSurface);
     SDL_FreeSurface(bgSurface);
+    SDL_Surface* overSurface = IMG_Load("gameover.jpg");
+    overTexture = SDL_CreateTextureFromSurface(renderer, overSurface);
+    SDL_FreeSurface(overSurface);
+    SDL_Surface* newSurface = IMG_Load("moman.jpg");
+    newTexture = SDL_CreateTextureFromSurface(renderer, newSurface);
+    SDL_FreeSurface(newSurface);
     Mix_Init(MIX_INIT_MP3 | MIX_INIT_OGG);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
     loadSounds();
@@ -36,6 +42,10 @@ void Game::handleEvents() {
         if (event.type == SDL_QUIT) {
             running = false;
         } else if (event.type == SDL_KEYDOWN) {
+            if (mo) {
+                mo = false;
+                return;
+            }
             if (event.key.keysym.sym == SDLK_SPACE && gameover==true) {
                 reset();
                 gameover=false;
@@ -52,7 +62,7 @@ void Game::update() {
     if (snake.checkCollision()) {
         gameover = true;
         Mix_PlayMusic(gameOverMusic,1);
-        std::cout<<"Your score is: "<<dem;
+        std::cout<<"\rYour score is: "<<dem;
         dem=0;
         return;
     }
@@ -66,11 +76,23 @@ void Game::update() {
 }
 
 void Game::render() {
+    if(mo==true){
+        SDL_RenderClear(renderer);
+        SDL_RenderCopy(renderer, newTexture, NULL, NULL);
+        SDL_RenderPresent(renderer);
+        return;
+    }
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
     snake.render(renderer);
     food.render(renderer);
     SDL_RenderPresent(renderer);
+    if(gameover==true){
+        SDL_RenderClear(renderer);
+        SDL_RenderCopy(renderer, overTexture, NULL, NULL);
+        SDL_RenderPresent(renderer);
+        return;
+    }
 }
 
 

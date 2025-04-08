@@ -23,6 +23,9 @@ private:
     Mix_Music* gameOverMusic;
     void reset();
     SDL_Texture* backgroundTexture;
+    SDL_Texture* overTexture;
+    SDL_Texture* newTexture;
+    bool mo=true;
     void loadSounds();
 };
 

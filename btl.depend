@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1744096877 source:d:\btl\food.cpp
+1744102341 source:d:\btl\food.cpp
 	"food.h"
 	<cstdlib>
 	"const.h"
 	<SDL.h>
 	<SDL_image.h>
+	"game.h"
 
 1744098077 d:\btl\food.h
 	<SDL.h>
@@ -12,14 +13,14 @@
 
 1744045130 d:\btl\const.h
 
-1744097007 source:d:\btl\game.cpp
+1744118236 source:d:\btl\game.cpp
 	<iostream>
 	"game.h"
 	"const.h"
 	<SDL_image.h>
 	<SDL_mixer.h>
 
-1744094809 d:\btl\game.h
+1744121309 d:\btl\game.h
 	"snake.h"
 	"food.h"
 	<SDL_mixer.h>
