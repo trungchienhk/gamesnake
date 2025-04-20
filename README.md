@@ -1,8 +1,9 @@
 gamesnake với mở đầu là ảnh mở đầu
-![Screenshot (44)](https://github.com/user-at
+![Screenshot (45)](https://github.com/user-attachments/assets/1be75a62-3d26-4abe-957b-9b8a56d4533e)
 một con rắn xanh lá cây di chuyển trên một nền trời xanh và khi ăn thức ăn rắn dài ra 
-![Screenshot (47)](https://github.com/user-attachments/assets/47ec74bb-fde4-48c7-a7fa-c86b922d9d4a)
+![Screenshot (48)](https://github.com/user-attachments/assets/cbb36356-04e4-480f-8d44-2fd2b60eb59f)
 kết thúc trò chơi khi rắn tự va vào thân mình hoặc va cả tường
-![Screenshot (49)](https://github.com/user-attachments/assets/7520a84d-8fa6-4ed7-a533-837fa0c4a003)
+![Screenshot (50)](https://github.com/user-attachments/assets/1eb66023-94d1-46c5-b1c6-3c614a42257c)
 Ảnh chụp màn hình cuối cùng hiển thị điểm số của người chơi và cùng dòng chữ "GAME OVER CONTINUE EXIT" và "Press space to continue".
-![Screenshot (46)](https://github.com/user-attachments/assets/42b5b306-9054-49a8-ba99-b058e3f7aa4d)
+![Screenshot (49)](https://github.com/user-attachments/assets/5b0b7e17-8996-4879-a159-435d1e769ad6)
+
